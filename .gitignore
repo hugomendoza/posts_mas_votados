@@ -3,6 +3,7 @@
 # dependencies
 /node_modules
 /Instrucciones posts mas votados
+/semantic
 
 # testing
 /coverage
