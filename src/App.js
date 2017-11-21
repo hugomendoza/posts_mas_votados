@@ -1,21 +1,25 @@
 import React, { Component } from 'react';
 import './App.css';
-import { Button, Icon } from 'semantic-ui-react';
+import { Grid } from 'semantic-ui-react'
 
 class App extends Component {
   render() {
     return (
-      <div className="App">
+      <div>
         <header>
-          <h1 className="App-title">Welcome to React</h1>
+          <h1>Blog posts populares</h1>
         </header>
-        <p>To get started, edit <code>src/App.js</code> and save to reload.</p>
-        <Button animated primary>
-          <Button.Content visible>Next</Button.Content>
-          <Button.Content hidden>
-            <Icon name='right arrow' />
-          </Button.Content>
-        </Button>
+        <Grid container columns={3}>
+          <Grid.Column>
+            <h1>Las cosas que hay que ver</h1>
+          </Grid.Column>
+          <Grid.Column>
+            <h1>Las cosas que hay que ver</h1>
+          </Grid.Column>
+          <Grid.Column>
+            <h1>Las cosas que hay que ver</h1>
+          </Grid.Column>
+        </Grid>
       </div>
     );
   }
