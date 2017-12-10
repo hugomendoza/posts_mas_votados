@@ -9,8 +9,8 @@ export class BtnOrder extends React.Component {
           <Grid.Column>
             <div className="order">
               <h3>Orden:</h3>
-              <Button primary>Primary</Button>
-              <Button basic color='blue'>Blue</Button>
+              <Button primary>Ascendente</Button>
+              <Button basic color='blue'>Descendente</Button>
             </div>
           </Grid.Column>
         </Grid>
