@@ -45,6 +45,16 @@ export class Template extends React.Component {
         }
       ]
     }
+    this.incrementNumber = this.incrementNumber.bind(this);
+  }
+
+  incrementNumber() {
+    let data = this.state.data;
+    for (var i = 0; i < data.length; i++) {
+      if (data[i].votes === 0) {
+        console.log(data[i]);
+      }
+    }
   }
 
   render() {
@@ -57,7 +67,7 @@ export class Template extends React.Component {
             </Grid.Column>
             <Grid.Column width={1}>
               <div>
-                <Icon color='blue' link name='angle up' />
+                <Icon color='blue' link name='angle up' onClick={ this.incrementNumber }/>
                 <h5>{post.votes}</h5>
                 <Icon color='blue' link name='angle down' />
               </div>
