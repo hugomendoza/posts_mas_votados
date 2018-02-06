@@ -47,16 +47,7 @@ export class Template extends React.Component {
     }
     this.incrementNumber = this.incrementNumber.bind(this);
   }
-
-  incrementNumber() {
-    let data = this.state.data;
-    for (var i = 0; i < data.length; i++) {
-      if (data[i].votes === 0) {
-        console.log(data[i]);
-      }
-    }
-  }
-
+  
   render() {
     return(
       <div>
