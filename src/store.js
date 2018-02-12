@@ -1,59 +1,59 @@
 import { createStore } from 'redux';
-import data from './data'
+import posts from './posts'
 
-function obtainId (value, arr, prop) {
-  for (var i = 0; i < arr.lenght; i++) {
-    if (arr[i][prop] === value) {
-      return i;
+function obtainId(value, arr, prop) {
+    for(var i = 0; i < arr.length; i++) {
+        if(arr[i][prop] === value) {
+            return i;
+        }
     }
-  }
-  return -1;
+    return -1;
 }
 
 const reducer = (state, action) => {
-	if (action.type === 'ME_GUSTA'){
-    let data = state.data;
-    let index = obtainId(action.post.id,data,'id');
-    posts[index]['votes'] = data[index].votes + 1;
+  if (action.type === 'ME_GUSTA'){
+    let posts = state.posts;
+    let index = obtainId(action.post.id,posts,'id');
+    posts[index]['votes'] = posts[index].votes + 1;
     return{
       ...state,
-      data: data
+      posts: posts
     }
   }
   else if (action.type === 'ME_DISGUSTA') {
-    let data = state.data;
-    let index = obtainId(action.post.id,data,'id');
-    posts[index]['votes'] = data[index].votes - 1;
+    let posts = state.posts;
+    let index = obtainId(action.post.id,posts,'id');
+    posts[index]['votes'] = posts[index].votes - 1;
     return{
       ...state,
-      data: data
+      posts: posts
     }
   }
   else if (action.type === 'ORDEN_ASC') {
-    let data_asc = state.data;
-    data_asc.sort(function (a, b) {
+    let posts_asc = state.posts;
+    posts_asc.sort(function (a, b) {
       return a.votes - b.votes;
     });
     return{
       ...state,
       ascendent: true,
       descendent: false,
-      data: data_asc
+      posts: posts_asc
     }
   }
   else if (action.type === 'ORDEN_DES') {
-    let data_des = state.data;
-    data_des.sort(function (a, b) {
+    let posts_des = state.posts;
+    posts_des.sort(function (a, b) {
       return b.votes - a.votes;
     });
     return{
       ...state,
       ascendent: false,
       descendent: true,
-      data: data_des
+      posts: posts_des
     }
   }
   return state;
 }
 
-export default createStore(reducer, {data: data, ascendent: false, descendent: false});
+export default createStore(reducer, {posts: posts, ascendent: false, descendent: false});

@@ -1,20 +1,20 @@
 const componentWillMount = () => {
   return {
-    type: "INITIAL_DATA"
+    type: "INITIAL_SORT"
   };
 };
 
-const voteUp = data => {
+const voteUp = post => {
   return {
     type: "ME_GUSTA",
-    data
+    post
   };
 };
 
 const voteDown = post => {
   return {
     type: "ME_DISGUSTA",
-    data
+    post
   };
 };
 

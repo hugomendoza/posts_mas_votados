@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import './App.css';
 import { Grid } from 'semantic-ui-react';
-import { BtnOrder } from './components/BtnOrder.js';
+import BtnOrder from './components/BtnOrder.js';
 import { Template } from './components/Template.js';
 
 class App extends Component {
