@@ -1,19 +1,15 @@
-import { Button } from "@/components/ui/button"
-// import BtnOrder from './components/BtnOrder';
-// import { Template } from './components/Template';
+import React from 'react';
+
+import { Layout } from './Layout/Layout';
+import { ContentCard, Header, Menu } from './components';
 
 const App = () => {
   return (
-    <div>
-      <div>
-        <div>
-          <h1>Blog Posts Populares</h1>
-        </div>
-      </div>
-      <Button>Click Me</Button>
-      {/* <BtnOrder />
-      <Template /> */}
-    </div>
+    <Layout>
+      <Header title="Posts más votados" />
+      <Menu />
+      <ContentCard />
+    </Layout>
   );
 }
 
