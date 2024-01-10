@@ -1,10 +1,11 @@
 import React from 'react'
 import { AnimatePresence, motion } from 'framer-motion';
 
+import { Card } from '../index';
+
 import { useAppSelector } from '../../hooks/useRedux';
 
 import { StyledSection, Grid } from './ContenCard.styles'
-import { Card } from '../Card/Card'
 
 import { PostProps } from '../../interfaces/interfaces';
 

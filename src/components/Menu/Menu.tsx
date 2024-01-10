@@ -20,8 +20,8 @@ export const Menu = () => {
     <StyledMenu>
       <StyledDiv>
         <p>Ordenar por:</p>
-        <Button value='Ascendente' onClick={onSortAsc}/>
-        <Button value='Descendente' onClick={onSortDesc}/>
+        <Button value='Mejor valorados' onClick={onSortAsc}/>
+        <Button value='Te pueden interesar' onClick={onSortDesc}/>
       </StyledDiv>
     </StyledMenu>
   )

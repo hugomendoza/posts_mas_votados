@@ -73,4 +73,8 @@ export const StyledCard = styled.article.attrs({
     align-items: center;
     justify-content: flex-end;
   }
+
+  span {
+    font-size: 0.75rem;
+  }
 `

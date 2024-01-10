@@ -10,17 +10,17 @@ const initialState:StoreProps = {
   descendent: false
 }
 
-export const postsSlice = createSlice({
+const postsSlice = createSlice({
   name: "posts",
   initialState,
   reducers: {
-    orderAscendingPosts: (state: StoreProps) => {
-      state.posts.sort((a, b) => a.votes - b.votes)
+    orderAscendingPosts: (state:StoreProps) => {
+      state.posts.sort((a, b) => b.votes - a.votes)
       state.ascendent = true
       state.descendent = false
     },
-    orderDescendingPosts: (state: StoreProps) => {
-      state.posts.sort((a, b) => b.votes - a.votes)
+    orderDescendingPosts: (state:StoreProps) => {
+      state.posts.sort((a, b) => a.votes - b.votes)
       state.ascendent = false
       state.descendent = true
     },
@@ -45,3 +45,5 @@ export const {
   likePost,
   dislikePost
 } = postsSlice.actions
+
+export default postsSlice.reducer

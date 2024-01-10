@@ -1,21 +1,30 @@
 import React from 'react'
-import { StyledButton } from './Button.styles'
+import { StyledButton, PropsButton } from './Button.styles'
 
-interface PropsButton {
+interface IPropsButton extends PropsButton {
   value?: string;
+  icon?: JSX.Element;
   onClick?: () => void;
 }
 
 export const Button = ({
     value = 'Guardar',
+    variant = '',
+    icon = <></>,
+    type = "",
     onClick
-  }:PropsButton) => {
+  }:IPropsButton) => {
 
   return (
     <StyledButton
       onClick={onClick}
+      variant={variant}
+      type={type}
     >
-      <p>{value}</p>
+      { variant === 'icon'
+        ? icon
+        : <p>{value}</p>
+      }
     </StyledButton>
   )
 
