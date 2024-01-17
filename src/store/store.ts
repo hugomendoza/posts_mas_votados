@@ -4,6 +4,7 @@ import storage from "redux-persist/lib/storage";
 import { persistReducer, persistStore } from "redux-persist";
 
 import  postsSlice from "./posts/postsSlice";
+import uiSlice from "./ui/uiSlice";
 
 const persistConfig = {
   key: 'posts',
@@ -11,7 +12,8 @@ const persistConfig = {
 }
 
 const rootReducer = combineReducers({
-  posts: postsSlice
+  posts: postsSlice,
+  ui: uiSlice
 })
 
 const persistedReducer = persistReducer(persistConfig, rootReducer)

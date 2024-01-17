@@ -28,7 +28,6 @@ export const StyledCard = styled.article.attrs({
 
   figcaption {
     font-size: 0.6rem;
-    color: #6B7280;
   }
   
 
@@ -49,17 +48,20 @@ export const StyledCard = styled.article.attrs({
   }
 
   h3 {
-    color: black;
+    color-scheme: light dark;
     font-size: 1.125rem;
     line-height: 1.5rem;
-    font-weight: 500;
+    font-weight: 700;
     margin-bottom: 0.5rem;
+
+    a {
+      color: inherit;
+    }
   }
 
   .description {
     font-size: 0.875rem;
     line-height: 1.625;
-    color: #6B7280;
     overflow: hidden;
     display: -webkit-box;
     -webkit-box-orient: vertical;

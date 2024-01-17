@@ -8,7 +8,7 @@ export const StyledHeader = styled.header.attrs({
   h1 {
     font-size: 2rem;
     text-align: center;
-    color: rgb(var(--blue-11));
+    color: ${(props) => `rgb(var(${props.theme.text[props.theme.selectedColor]})/var(--tw-bg-opacity))`};
     line-height: 1;
   }
 `

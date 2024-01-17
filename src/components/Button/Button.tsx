@@ -3,26 +3,26 @@ import { StyledButton, PropsButton } from './Button.styles'
 
 interface IPropsButton extends PropsButton {
   value?: string;
-  icon?: JSX.Element;
+  image?: JSX.Element;
   onClick?: () => void;
 }
 
 export const Button = ({
-    value = 'Guardar',
-    variant = '',
-    icon = <></>,
-    type = "",
+    value,
+    $icon,
+    image,
+    type,
     onClick
   }:IPropsButton) => {
 
   return (
     <StyledButton
       onClick={onClick}
-      variant={variant}
+      $icon={$icon}
       type={type}
     >
-      { variant === 'icon'
-        ? icon
+      { $icon === 'icon'
+        ? image
         : <p>{value}</p>
       }
     </StyledButton>

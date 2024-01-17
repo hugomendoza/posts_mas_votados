@@ -21,11 +21,11 @@ export const Card = ({
 
   const { Like, Dislike } = icons;
 
-  const onLikePost = (id: number) => {
+  const onLikePost = (id: number):void => {
     dispatch(likePost({ id }));
   }
 
-  const onDislikePost = (id: number) => {
+  const onDislikePost = (id: number):void => {
     dispatch(dislikePost({ id }));
   }
 
@@ -48,26 +48,28 @@ export const Card = ({
           />
         </figure>
         <div className='card-content'>
-          <a
-            href={url}
-            target='_blank'
-            rel="noreferrer noopenner"
-          >
-            <h3>{title}</h3>
-          </a>
+          <h3>
+            <a
+              href={url}
+              target='_blank'
+              rel="noreferrer noopenner"
+            >
+              {title}
+            </a>
+          </h3>
           <p className='description'>{description}</p>
           <footer className='card-footer'>
             <Button
               onClick={() => onLikePost(id)}
-              variant='icon'
-              icon={<div dangerouslySetInnerHTML={{ __html: Like }} />}
+              $icon='icon'
+              image={<div dangerouslySetInnerHTML={{ __html: Like }} />}
               type='like'
             />
             <span>{votes}</span>
             <Button
               onClick={() => onDislikePost(id)}
-              variant='icon'
-              icon={<div dangerouslySetInnerHTML={{ __html: Dislike }} />}
+              $icon='icon'
+              image={<div dangerouslySetInnerHTML={{ __html: Dislike }} />}
               type='dislike'
             />
           </footer>

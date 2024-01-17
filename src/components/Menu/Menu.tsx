@@ -8,11 +8,11 @@ export const Menu = () => {
 
   const dispatch = useAppDispatch();
 
-  const onSortAsc = () => {
+  const onSortAsc = ():void => {
     dispatch(orderAscendingPosts())
   }
 
-  const onSortDesc = () => {
+  const onSortDesc = ():void => {
     dispatch(orderDescendingPosts())
   }
 
@@ -20,8 +20,8 @@ export const Menu = () => {
     <StyledMenu>
       <StyledDiv>
         <p>Ordenar por:</p>
-        <Button value='Mejor valorados' onClick={onSortAsc}/>
-        <Button value='Te pueden interesar' onClick={onSortDesc}/>
+        <Button value="Destacados" onClick={onSortAsc}/>
+        <Button value="Menos votos" onClick={onSortDesc}/>
       </StyledDiv>
     </StyledMenu>
   )

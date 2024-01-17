@@ -13,7 +13,7 @@ export const Grid = styled.div.attrs({
   grid-template-columns: repeat(3, 1fr);
   gap: 1rem;
 
-  @media (width < 768px) {
+  @media (width < 992px) {
     grid-template-columns: repeat(2, 1fr);
   }
 

@@ -1,16 +1,16 @@
 import styled from "styled-components";
 
 export interface PropsButton {
-  variant?: string;
-  type?: string
+  $icon?: string;
+  type?: string;
 }
 
 export const StyledButton = styled.button.attrs({
   className: "StyledButton",
 })<PropsButton>`
   align-items: center;
-  background-color: rgb(var(--blue-4)/var(--tw-bg-opacity));
-  color: rgb(var(--blue-11)/var(--tw-text-opacity));
+  background-color: ${(props) => `rgb(var(${props.theme.background[props.theme.selectedColor]})/var(--tw-bg-opacity))`};
+  color: ${(props) => `rgb(var(${props.theme.text[props.theme.selectedColor]})/var(--tw-bg-opacity))`};
   border-radius: 0.75rem;
   cursor: pointer;
   display: inline-flex;
@@ -29,14 +29,14 @@ export const StyledButton = styled.button.attrs({
   font-weight: 500;
 
   &:hover {
-    background-color: rgb(var(--blue-5)/var(--tw-bg-opacity));
+    background-color: ${(props) => `rgb(var(${props.theme.hover[props.theme.selectedColor]})/var(--tw-bg-opacity))`};
   }
 
   p {
     margin: 0;
   }
 
-  ${props => props.variant === "icon" && `
+  ${props => props.$icon === "icon" && `
     width: 2rem;
     height: 2rem;
     border-radius: 100%;

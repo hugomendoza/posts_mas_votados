@@ -5,7 +5,7 @@ interface PropsHeader {
   title?: string
 }
 
-export const Header = ({title = 'Make it Real 2'}:PropsHeader) => {
+export const Header = ({title}:PropsHeader) => {
 
   return (
     <StyledHeader>

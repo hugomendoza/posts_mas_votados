@@ -2,7 +2,9 @@ import styled from "styled-components";
 
 export const StyledLayout = styled.main.attrs({
   className: "Layout",
-})``
+})`
+  min-height: 100dvh;
+`
 
 export const Container = styled.div.attrs({
   className: "Container",
